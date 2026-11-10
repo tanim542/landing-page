@@ -13,21 +13,57 @@
         <a href="#" class="font-bold text-2xl">AIWeb</a>
         <ul class="hidden md:flex gap-6">
             <li class="hover:text-gray-300 transition"><a href="#">Home</a></li>
-            <li class="hover:text-gray-300 transition"><a href="#">Features</a></li>
+            <li class="hover:text-gray-300 transition"><a href="#features">Features</a></li>
             <li class="hover:text-gray-300 transition"><a href="#">Contact</a></li>
         </ul>
         <div class="flex items-center gap-4">
             <button class="bg-yellow-700 px-4 py-2 rounded hover:bg-yellow-600 transition">Sign Up</button>
-            <button id="menu-button" aria-label="Open menu" class="md:hidden text-2xl hover:text-yellow-300 transition">
+            <button id="menu-button" aria-expanded="false" aria-label="Open menu"
+                class="md:hidden text-2xl hover:text-yellow-300 transition">
                 &#9776;
             </button>
         </div>
     </nav>
     <ul id="mobile-menu" class="hidden md:hidden bg-gray-900 text-white flex flex-col p-4">
         <li class="hover:text-gray-300 transition"><a href="#">Home</a></li>
-        <li class="hover:text-gray-300 transition"><a href="#">Features</a></li>
+        <li class="hover:text-gray-300 transition"><a href="#features">Features</a></li>
         <li class="hover:text-gray-300 transition"><a href="#">Contact</a></li>
     </ul>
+    <section class="py-20 px-4 text-center">
+        <h1 class="text-3xl md:text-5xl font-bold">
+            Welcome to AIWeb
+        </h1>
+        <p class="max-w-2xl mx-auto text-gray-600 mt-4 ">
+            lorem ipsum dolor sit amet, consectetur adipiscing elit.lorem ipsum dolor sit amet, consectetur adipiscing
+            elit.lorem ipsum dolor sit amet, consectetur adipiscing elit.lorem ipsum dolor sit amet, consectetur
+            adipiscing elit.
+        </p>
+        <button class="mt-4 text-white bg-yellow-700 px-4 py-2 rounded hover:bg-yellow-600 transition">
+            Get Started
+        </button>
+    </section>
+    <section id="features" class="py-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 max-w-5xl mx-auto">
+            <div class="p-6 rounded bg-gray-200">
+                <h3 class="text-xl font-bold mb-2">Fast</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At labore quod earum maxime sed
+                    reprehenderit, iure dignissimos doloribus, cumque repellat eos nisi, fugiat cupiditate? Facere
+                    similique earum ut fugiat error?</p>
+            </div>
+            <div class="p-6 rounded bg-gray-200">
+                <h3 class="text-xl font-bold mb-2">Smart</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur corporis totam quos molestiae
+                    quibusdam expedita, repellat ea. Error hic harum, eos ex unde quisquam porro beatae in id officia
+                    corporis!</p>
+            </div>
+            <div class="p-6 rounded bg-gray-200">
+                <h3 class="text-xl font-bold mb-2">Simple</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur corporis totam quos molestiae
+                    quibusdam expedita, repellat ea. Error hic harum, eos ex unde quisquam porro beatae in id officia
+                    corporis!</p>
+            </div>
+        </div>
+    </section>
     <script>
         const button = document.getElementById("menu-button");
         const menu = document.getElementById("mobile-menu");
@@ -37,12 +73,14 @@
             if (isHidden) {
                 button.textContent = "☰";
                 button.setAttribute("aria-label", "Open menu");
+                button.setAttribute("aria-expanded", "false");
             }
             else {
-                button.textContent = "✖";
+                button.textContent = "✕";
                 button.setAttribute("aria-label", "Close menu");
+                button.setAttribute("aria-expanded", "true");
             }
-        });
+        }); 
     </script>
 </body>
 
